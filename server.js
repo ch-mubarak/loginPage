@@ -3,20 +3,24 @@ const path=require("path")
 const app=express();
 const bodyParser=require("body-parser")
 const session=require("express-session");
-const cookies=require("cookie-parser")
+const cookieParser=require("cookie-parser")
 const router =require("./router");
 
 app.set("view engine","ejs")
 
 //load static items
-app.use("/static",express.static(path.join(__dirname,"public")))
-
+// app.use("/static",express.static(path.join(__dirname,"public")))
+app.use(express.static("public"))
+app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(cookieParser());
 app.use(session({
     secret:"secret",
     resave:true,
     saveUninitialized:true,
+    cookie:{
+        maxAge:60000
+    }
 
 }))
 

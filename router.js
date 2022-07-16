@@ -1,3 +1,4 @@
+const cookieParser = require("cookie-parser");
 var express=require("express");
 var router=express.Router();
 
@@ -5,62 +6,62 @@ const apes=[
     {
         model:"#14324",
         price:"$750",
-        imgUrl:"/static/images/ape_1.png"
+        imgUrl:"/images/ape_1.png"
     },
     {
         model:"#44353",
         price:"$1070",
-        imgUrl:"/static/images/ape_2.png"
+        imgUrl:"/images/ape_2.png"
     },
     {
         model:"#92367",
         price:"$620",
-        imgUrl:"/static/images/ape_3.png"
+        imgUrl:"/images/ape_3.png"
     },
     {
         model:"#74323",
         price:"$710",
-        imgUrl:"/static/images/ape_4.png"
+        imgUrl:"/images/ape_4.png"
     },
     {
         model:"#14320",
         price:"$9999",
-        imgUrl:"/static/images/ape_5.png"
+        imgUrl:"/images/ape_5.png"
     },
     {
         model:"#54321",
         price:"$750",
-        imgUrl:"/static/images/ape_6.png"
+        imgUrl:"/images/ape_6.png"
     },
     {
         model:"#83323",
         price:"$350",
-        imgUrl:"/static/images/ape_7.png"
+        imgUrl:"/images/ape_7.png"
     },
     {
         model:"#54113",
         price:"$520",
-        imgUrl:"/static/images/ape_8.png"
+        imgUrl:"/images/ape_8.png"
     },
     {
         model:"#78463",
         price:"$1050",
-        imgUrl:"/static/images/ape_9.png"
+        imgUrl:"/images/ape_9.png"
     },
     {
         model:"#64594",
         price:"$350",
-        imgUrl:"/static/images/ape_10.png"
+        imgUrl:"/images/ape_10.png"
     },
     {
         model:"#23477",
         price:"$520",
-        imgUrl:"/static/images/ape_11.png"
+        imgUrl:"/images/ape_11.png"
     },
     {
         model:"#98121",
         price:"$1050",
-        imgUrl:"/static/images/ape_12.png"
+        imgUrl:"/images/ape_12.png"
     }
 
 ]
@@ -99,7 +100,9 @@ router.get("/logout",(req,res)=>{
             res.send("Error")
         }
         else{
+            console.log(cookieParser)
             res.render("base",{logout:"logout Successfully"})
+
         }
     })
 })
