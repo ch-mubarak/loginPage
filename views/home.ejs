@@ -13,8 +13,16 @@
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">User</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                  </li>
                 </ul>
+
                 <form action="/home" method="post">
+                  <i class="fa-solid fa-wallet fa-2xl m-5"></i>
                   <a href="/route/logout" class="btn btn-outline-primary">Logout</a>
                   <!-- <button class="btn btn-outline-primary" type="submit">Logout</button> -->
                 </form>
@@ -30,7 +38,7 @@
                     <img src="<%= apes[k].imgUrl %>" class="card-img-top" alt="...">
                     <div class="card-body">
                       <p class="card-text">model: <%= apes[k].model %> </p>
-                      <p class="card-text">price: <%= apes[k].price %> </p>
+                      <p class="card-text">price: <i class="fa-brands fa-ethereum"></i> <%= apes[k].price %> </p>
                       <a href="#" class="btn btn-primary">Buy now</a>
                     </div>
                   </div>

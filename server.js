@@ -1,5 +1,4 @@
 const express=require("express");
-const path=require("path")
 const app=express();
 const bodyParser=require("body-parser")
 const session=require("express-session");
@@ -9,7 +8,6 @@ const router =require("./router");
 app.set("view engine","ejs")
 
 //load static items
-// app.use("/static",express.static(path.join(__dirname,"public")))
 app.use(express.static("public"))
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended:true}))
@@ -18,9 +16,6 @@ app.use(session({
     secret:"secret",
     resave:true,
     saveUninitialized:true,
-    cookie:{
-        maxAge:60000
-    }
 
 }))
 
@@ -30,7 +25,6 @@ app.use("/route",router)
 app.get("/",(req,res)=>{
     res.render("base")
 })
-
 
 
 
