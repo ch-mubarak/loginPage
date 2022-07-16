@@ -16,14 +16,31 @@ app.use(session({
     secret:"secret",
     resave:true,
     saveUninitialized:true,
+    cookie:{
+        maxAge:60000
+    }
 
 }))
+
+//cache clearing
+app.use((req,res,next)=>{
+    res.set("Cache-Control","no-store");
+    next();
+})
+
 
 app.use("/route",router)
 
 //home route
 app.get("/",(req,res)=>{
-    res.render("base")
+    if(req.session.user){
+        res.redirect("/route/home")
+    }
+    else{
+        req.session.loginError=true 
+        res.render("base")
+    }
+    
 })
 
 

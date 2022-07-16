@@ -101,8 +101,10 @@ router.get("/logout",(req,res)=>{
         }
         else{
 
-            res.render("base",{logout:"logout Successfully"})
+            res.render("base",{logout:"logout Successfully"})  
+
         }
     })
+
 })
 module.exports=router
