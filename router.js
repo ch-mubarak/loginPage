@@ -1,6 +1,8 @@
 const cookieParser = require("cookie-parser");
-var express=require("express");
-var router=express.Router();
+const express=require("express");
+const router=express.Router();
+const view=express()
+
 
 const apes=[
     {
@@ -66,9 +68,10 @@ const apes=[
 
 ]
 
+
 const credential={
     user:"chmubarak",
-    password:"123"
+    password:"Mubarak123"
 }
 //login user
 router.post("/login",(req,res)=>{
@@ -87,7 +90,6 @@ router.get("/home",(req,res)=>{
         res.render("home",{apes:apes})
     }
     else{
-        // res.send("unauthersized user")
         res.redirect("/")
     }
 })
@@ -100,8 +102,8 @@ router.get("/logout",(req,res)=>{
             res.send("Error")
         }
         else{
-
-            res.render("base",{logout:"logout Successfully"})  
+             
+            res.render("base",{logout:"logout Successfully"}) 
 
         }
     })

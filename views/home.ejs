@@ -11,20 +11,20 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active brand" aria-current="page" href="#">BoredApe club</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">User</a>
+                    <a class="nav-link active" aria-current="page" href="#">Create</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                    <a class="nav-link active" aria-current="page" href="#">My Collection</a>
                   </li>
                 </ul>
 
                 <form action="/home" method="post">
-                  <i class="fa-solid fa-wallet fa-2xl m-5"></i>
+                  <a class="fa-solid fa-wallet fa-2xl m-5 wallet"></a> 
                   <a href="/route/logout" class="btn btn-outline-primary">Logout</a>
-                  <!-- <button class="btn btn-outline-primary" type="submit">Logout</button> -->
+  
                 </form>
               </div>
             </div>
@@ -36,10 +36,10 @@
             <div class="col-sm-6 col-md-3 col-6 mt-4">
                 <div class="card shadow p-3 mb-3 bg-white rounded">
                     <img src="<%= apes[k].imgUrl %>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">model: <%= apes[k].model %> </p>
-                      <p class="card-text">price: <i class="fa-brands fa-ethereum"></i> <%= apes[k].price %> </p>
-                      <a href="#" class="btn btn-primary">Buy now</a>
+                    <div class="card-body ">
+                      <h6 class="card-text ">model: <%= apes[k].model %> </h6>
+                      <h6 class="card-text">price: <i class="fa-brands fa-ethereum"></i> <%= apes[k].price %> </h6>
+                      <a href="#" class="btn btn-primary btn-block">Buy now</a>
                     </div>
                   </div>
             </div>

@@ -26,6 +26,7 @@ body {
 .logo {
     width: 80px;
     margin: auto;
+    cursor: pointer; 
 }
 
 .logo img {
@@ -97,10 +98,8 @@ body {
 }
 
 .card{
-
     transition: all 0.2s ease;
-    cursor: pointer;
-    
+    cursor: pointer; 
 
   }
     
@@ -110,6 +109,18 @@ body {
     box-shadow: 5px 6px 6px 2px #e9ecef;
     transform: scale(1.1);
 }
+
+.brand{
+    font-weight: 700;
+}
+
+.wallet{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(37, 34, 34);
+
+}
+
 
 @media(max-width: 380px) {
     .wrapper {
